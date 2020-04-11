@@ -42,63 +42,74 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', 'img/logo.png');
 
 
-//Task 1
+//Task 1 and 2
 let cta = document.querySelector("#cta-img");
-cta.src = 'img/header-img.png';
+cta.src = siteContent["cta"]["img-src"];
 
 let middleImage = document.querySelector("#middle-img");
-middleImage.src = 'img/mid-page-accent.jpg';
+middleImage.src = siteContent["main-content"]["middle-img-src"];
 
 let ctaText = document.querySelector(".cta-text");
 
 let navItems = document.querySelectorAll("a");
-navItems[0].textContent = "Services";
-navItems[1].textContent = "Product";
-navItems[2].textContent = "Vision";
-navItems[3].textContent = "Features";
-navItems[4].textContent = "About";
-navItems[5].textContent = "Contact";
+navItems[0].textContent = siteContent["nav"]["nav-item-1"];
+navItems[1].textContent = siteContent["nav"]["nav-item-2"];
+navItems[2].textContent = siteContent["nav"]["nav-item-3"];
+navItems[3].textContent = siteContent["nav"]["nav-item-4"];
+navItems[4].textContent = siteContent["nav"]["nav-item-5"];
+navItems[5].textContent = siteContent["nav"]["nav-item-6"];
 
 let mainTitle = document.querySelector("h1");
-mainTitle.textContent = "DOM IS AWESOME";
+mainTitle.textContent = siteContent["cta"]["h1"];
 
 let button = document.querySelector("button");
-button.textContent = "Get Started";
+button.textContent = siteContent["cta"]["button"];
 
 //top
 let topTitles = document.querySelectorAll(".top-content h4");
-topTitles[0].textContent = "FEATURES";
-topTitles[1].textContent = "ABOUT";
+topTitles[0].textContent = siteContent["main-content"]["features-h4"];
+topTitles[1].textContent = siteContent["main-content"]["about-h4"];
 
 let topParagraphs = document.querySelectorAll(".top-content p");
-topParagraphs[0].textContent = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-topParagraphs[1].textContent = "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+topParagraphs[0].textContent = siteContent["main-content"]["features-content"];
+topParagraphs[1].textContent = siteContent["main-content"]["about-content"];
 
 //bottom
 let bottomTitles = document.querySelectorAll(".bottom-content h4");
-bottomTitles[0].textContent = "SERVICES";
-bottomTitles[1].textContent = "PRODUCT";
-bottomTitles[2].textContent = "VISION";
+bottomTitles[0].textContent = siteContent["main-content"]["services-h4"];
+bottomTitles[1].textContent = siteContent["main-content"]["product-h4"];
+bottomTitles[2].textContent = siteContent["main-content"]["vision-h4"];
 
 
 let bottomParagraphs = document.querySelectorAll(".bottom-content p");
-bottomParagraphs[0].textContent = "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-bottomParagraphs[1].textContent = "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-bottomParagraphs[2].textContent = "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+bottomParagraphs[0].textContent = siteContent["main-content"]["services-content"];
+bottomParagraphs[1].textContent = siteContent["main-content"]["product-content"];
+bottomParagraphs[2].textContent = siteContent["main-content"]["vision-content"];
 
 let contactTitle = document.querySelector(".contact h4");
-contactTitle.textContent = "CONTACT";
+contactTitle.textContent = siteContent["contact"]["contact-h4"];
 
 let contactParagraphs = document.querySelectorAll(".contact p");
-contactParagraphs[0].textContent = "123 Way 456 Street Somewhere, USA";
-//how do i <br> ??????????
-contactParagraphs[1].textContent = "1 (888) 888-8888";
-contactParagraphs[2].textContent = "sales@greatidea.io";
+contactParagraphs[0].textContent = siteContent['contact']['address'];
+contactParagraphs[1].textContent = siteContent['contact']['phone'];
+contactParagraphs[2].textContent = siteContent['contact']['email'];
 
 
 let footerParagraph = document.querySelector("footer p");
-footerParagraph.textContent = "Copyright Great Idea! 2018";
+footerParagraph.textContent = siteContent['footer']['copyright'];
 
-//Task 2
+//Task 3
+//navItems.style.color = 'green';// ????
+navItems.forEach(element => {
+  element.style.color = 'green';
+})
 
+let newPreChild = document.createElement("navPreChild");
+let newPostChild = document.createElement("newPostChild");
 
+newPreChild.textContent = "Back to Safety";
+newPostChild.textContent = "To Infinity";
+
+let nav = document.querySelector("nav");
+nav.appendChild(newPreChild);
+nav.prepend(newPostChild);
